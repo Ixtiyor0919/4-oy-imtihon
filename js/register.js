@@ -12,7 +12,6 @@ registerForm.addEventListener('submit', async event => {
         name: registerName.value,
         isAdmin: true
     }
-    console.log(credentials);
     const result = await registerRequest(credentials)
     if (result) {
         const { name, isAdmin, ...loginCreadentials } = credentials

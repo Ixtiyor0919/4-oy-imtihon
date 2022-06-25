@@ -14,6 +14,4 @@ async function getProfile() {
 
 getProfile().then(result => {
     console.log(result)
-}).catch(res => {
-    alert(res)
 })

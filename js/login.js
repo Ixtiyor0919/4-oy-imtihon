@@ -13,7 +13,6 @@ loginForm.addEventListener('submit', async event => {
     const result = await loginRequest(credentials)
     localStorage.setItem('token', result['Authorization'])
     window.location.href = "/post.html"
-    console.log(result)
 })
 signUp.addEventListener('click', () => {
     window.location.href = "/register.html"
