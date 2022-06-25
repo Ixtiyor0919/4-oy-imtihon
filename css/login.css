@@ -1,0 +1,15 @@
+.login-background {
+    width: 50%;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+.login-image {
+    width: 100%;
+    height: 98vh;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.login-btn {
+    background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
+    border-radius: 8px;
+}

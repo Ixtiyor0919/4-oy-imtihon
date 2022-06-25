@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <div class="register-wrapper">
+        <form class="register-form w-100 justify-content-center">
+            <div class="form-inner-top m-auto p-4 text-center">
+                <p class="form-inner-top-text">Sign Up</p>
+            </div>
+            <div class="form-inner-wrapper row col-4 ms-auto me-auto justify-content-center gap-3 ps-2 pe-2 pt-5 pb-3">
+                <label class="form-label col-12 m-2">
+                    <input type="text" class="form-control register-name" placeholder="Name">
+                </label>
+                <label class="form-label m-2">
+                    <input type="email" class="form-control register-email" placeholder="Email">
+                </label>
+                <label class="form-label m-2">
+                    <input type="password" class="form-control register-password" placeholder="Current password">
+                </label>
+                <div>
+                    <button class="btn register-btn col-12 text-light m-1" type="submit">SIGN UN</button>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <p class="form-inner-text me-2">Don't have an account?</p>
+                    <a href="#" class="form-inner-link">Sign In</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./js/register.js"></script>
+    <script src="./js/http.js"></script>
+</body>
+</html>
