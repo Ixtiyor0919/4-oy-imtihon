@@ -1,5 +1,5 @@
 if (!localStorage.getItem('token')) {
-    window.location.href = "/register.html"
+    window.location.href = "/index.html"
 }
 async function getProfile() {
     const token = localStorage.getItem('token')
@@ -14,4 +14,6 @@ async function getProfile() {
 
 getProfile().then(result => {
     console.log(result)
+}).catch(res => {
+    alert(res)
 })

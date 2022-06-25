@@ -18,6 +18,6 @@ registerForm.addEventListener('submit', async event => {
         const { name, isAdmin, ...loginCreadentials } = credentials
         const result = await loginRequest(loginCreadentials)
         localStorage.setItem('token', result['Authorization'])
-        window.location.href = "/index.html"
+        window.location.href = "/post.html"
     }
 })
