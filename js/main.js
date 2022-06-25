@@ -28,21 +28,25 @@ function createClonePosts(post) {
     editEl.dataset.todoId = post._id
     editEl.dataset.task = 'edit'
     editEl.addEventListener('click', (event) => {
+        if(clicked.dataset.todoId = post._id) {
+            updatedRequest(post._id)
+        }
         let modalEl = document.querySelector('.modal-container');
         modalEl.classList.add('modal--active');
         console.log(event.target);
         var modalForm = document.querySelector(".modal-form")
         var modalTitle = document.querySelector(".modal-form-title")
         var modalBody = document.querySelector(".modal-form-body")
-        
+        if(event.target.dataset.todoId == post._id) { 
+            id = post._id
+        }
         modalForm.addEventListener('submit', async event => {
             event.preventDefault()
-        
+
             const credentials = {
                 title: modalTitle.value,
                 body: modalBody.value
             }
-            console.log(credentials);
             const result = await updatedRequest(credentials, id)
             localStorage.setItem('token', result['Authorization'])
         })
@@ -52,10 +56,13 @@ function createClonePosts(post) {
     saveEl.dataset.todoId = post._id
     saveEl.dataset.task = 'save'
     saveEl.addEventListener("click", (event) => {
-        if(!bookmarkedPost.find(item => item._id = event.target.dataset.todoId)) {
-            const post = posts.find((post) => post._id = event.target.dataset.todoId);
+        // if(!bookmarkedPost.find(item => item._id == event.target.dataset.todoId)) {
+        //     const post = posts.find((post) => post._id == event.target.dataset.todoId);
+        //     bookmarkedPost.push(post);
+        //     event.target.disabled = true
+        if(event.target.dataset.todoId = post._id) {
             bookmarkedPost.push(post);
-            event.target.disabled = true
+            renderBookmarked(bookmarkedPost, bookmarked);
         }
         localStorage.setItem("bookmarkedPost", JSON.stringify(bookmarkedPost));
         renderBookmarked(bookmarkedPost, bookmarked);
@@ -66,14 +73,15 @@ function createClonePosts(post) {
 function createCloneBookmark(post) {
     let postTemplate = document.querySelector('#bookmarked-template');
     let postEl = postTemplate.content.cloneNode(true);
-    postEl.querySelector('.posts-item-title').textContent = post.title;
-    postEl.querySelector('.posts-item-description').textContent = post.body;
+    postEl.querySelector('.post-item-title').textContent = post.title;
+    postEl.querySelector('.post-item-description').textContent = post.body;
 
     let deleteEl = postEl.querySelector('.post-delete');
     deleteEl.dataset.todoId = post._id
     deleteEl.dataset.task = 'delete'
     return postEl
 }
+renderBookmarked(bookmarkedPost, bookmarked);
 
 postsRequest().then(result => {
     var posts = (result.posts)
@@ -83,21 +91,18 @@ postsRequest().then(result => {
 document.body.addEventListener('click', (event) => {
     clicked = event.target;
 
-    if(clicked.dataset.task = 'cancel') {
+    if(clicked.dataset.task === 'cancel') {
         let modalEl = document.querySelector('.modal-container');
         modalEl.classList.remove('modal--active');
     }
 
     // if(clicked.dataset.task = 'edit') {
-
+    //     id = clicked.dataset.todoId
+    //     console.log(id);
+    //     updatedRequest(id)
+    //     // localStorage.setItem('token', result['Authorization'])
     //     let modalEl = document.querySelector('.modal-container');
     //     modalEl.classList.add('modal--active');
-
-    //     let todoId = clicked.dataset.todoId;
-    //     let todo = posts.find(item => item._id == todoId)
-    //     let content = createModalInfo(todo);
-    //     let modal = renderModal(todo);
-    //     document.body.appendChild(modal)
 
     //     var modalForm = document.querySelector(".modal-form")
     //     var modalTitle = document.querySelector(".modal-form-title")
@@ -110,9 +115,14 @@ document.body.addEventListener('click', (event) => {
     //             title: modalTitle.value,
     //             body: modalBody.value
     //         }
-    //         console.log(credentials);
-    //         const result = await updatedRequest(credentials, id)
+    //         const result = await updatedRequest(credentials)
     //         localStorage.setItem('token', result['Authorization'])
     //     })
     // }
+
+    if(clicked.dataset.task === 'delete') {
+        bookmarkedPost = bookmarkedPost.filter(item => item._id !== clicked.dataset.todoId)
+        localStorage.setItem("bookmarkedPost", JSON.stringify(bookmarkedPost, bookmarked));
+        renderBookmarked(bookmarkedPost, bookmarked);
+    }
 })

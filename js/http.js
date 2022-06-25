@@ -69,10 +69,10 @@ async function postsDelete(id) {
     return result
 }
 
-async function updatedRequest(credentials, id) {
+async function updatedRequest(credentials, postId) {
     const token = localStorage.getItem('token')
     const result = await fetchAPI({
-        url: `${API}/api/posts/${id}/`,
+        url: `${API}//api/posts/${postId}`,
         method: "PUT",
         headers: {
             "Authorization": token

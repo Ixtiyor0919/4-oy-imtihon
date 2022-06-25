@@ -14,6 +14,7 @@ loginForm.addEventListener('submit', async event => {
     localStorage.setItem('token', result['Authorization'])
     window.location.href = "/post.html"
 })
+
 signUp.addEventListener('click', () => {
     window.location.href = "/index.html"
 })

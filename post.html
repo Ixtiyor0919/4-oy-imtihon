@@ -9,25 +9,31 @@
     <link rel="stylesheet" href="./css/post.css">
 </head>
 <body>
-    <div class="container-fluid d-flex main-container pt-5 ps-3 pe-3 justify-content-between">
-        <div class="row posts ps-3 pe-3 border pb-5 w-50"></div>
-        <div class="row bookmarked ps-3 pe-3 border pb-5 w-50"></div>
-    </div>
-    <div class="modal-container">
-        <div class="modal-content">
-            <form class="w-75 m-auto modal-form">
-                <h2 class="modal-title text-center">EDIT POST</h2>
-                <label class="label-form col-12">
-                    <input type="text" class="form-control modal-form-title" placeholder="Title">
-                </label>
-                <label class="label-form col-12">
-                    <input type="text" class="form-control modal-form-body" placeholder="Body">
-                </label>
-                <div>
-                    <button type="reset" class="btn modal-reset-btn">Cancel</button>
-                    <button type="submit" class="btn modal-save-btn">Save changes</button>
-                </div>
-            </form>
+    <div class="header-container">
+        <div class="d-flex align-items-center justify-content-end user">
+            <h3 class="user-name"></h3>
+            <a type="submit" class="btn user-out">Logout</a>
+        </div>
+        <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between">
+            <div class="row posts ps-3 pe-3 border pb-5 w-50"></div>
+            <div class="row bookmarked ps-3 pe-3 border pb-5 w-50"></div>
+        </div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <form class="w-75 m-aut modal-form">
+                    <h2 class="modal-title text-center">EDIT POST</h2>
+                    <label class="label-form col-12">
+                        <input type="text" class="form-control modal-form-title" placeholder="Title">
+                    </label>
+                    <label class="label-form col-12">
+                        <input type="text" class="form-control modal-form-body" placeholder="Body">
+                    </label>
+                    <div>
+                        <button type="reset" class="btn modal-reset-btn">Cancel</button>
+                        <button type="submit" class="btn modal-save-btn">Save changes</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -52,10 +58,10 @@
     <template id="bookmarked-template">
         <div class="post-item d-flex col-12 g-3 p-4 pb-2 justify-content-between">
             <div class="col-8">
-                 <h3 class="posts-item-title">
+                 <h3 class="post-item-title">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, odio.
                  </h3>
-                 <p class="posts-item-description">
+                 <p class="post-item-description">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nostrum deserunt illum magnam inventore optio dicta corporis aliquid totam non!
                  </p>
             </div>
