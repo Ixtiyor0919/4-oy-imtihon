@@ -1,7 +1,7 @@
 var loginForm = document.querySelector(".login-form")
 var loginEmail = document.querySelector(".login-email")
 var loginPassword = document.querySelector(".login-password")
-var signUp = document.querySelector(".form-inner-link")
+var signUp = document.querySelector(".form-inner-bottom-link")
 
 loginForm.addEventListener('submit', async event => {
     event.preventDefault()
@@ -15,5 +15,5 @@ loginForm.addEventListener('submit', async event => {
     window.location.href = "/post.html"
 })
 signUp.addEventListener('click', () => {
-    window.location.href = "/register.html"
+    window.location.href = "/index.html"
 })

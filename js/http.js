@@ -41,3 +41,29 @@ async function registerRequest(credentials) {
     })
     return result
 }
+
+async function postsRequest(credentials) {
+    const token = localStorage.getItem('token')
+    const result = await fetchAPI({
+        url: `${API}/api/posts`,
+        method: "GET",
+        headers: {
+            "Authorization": token
+        },
+        body: credentials
+    })
+    return result
+}
+
+async function postsDelete(credentials, id) {
+    const token = localStorage.getItem('token')
+    const result = await fetchAPI({
+        url: `${API}/api/posts/${id}`,
+        method: "DELETE",
+        headers: {
+            "Authorization": token
+        },
+        body: credentials
+    })
+    return result
+}

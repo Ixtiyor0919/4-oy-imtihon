@@ -1,7 +1,13 @@
+.login-container {
+    background: #F5F5F5;
+}
 .login-background {
     width: 50%;
     padding-top: 15px;
     padding-left: 20px;
+}
+.login-form {
+    transform: translateY(50%);
 }
 .login-image {
     width: 100%;
@@ -10,6 +16,30 @@
     border-top-right-radius: 8px;
 }
 .login-btn {
+    width: 94%;
     background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
     border-radius: 8px;
+}
+.form-inner-top-link {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140%;
+    color: #344767;
+}
+.login-email::placeholder, .login-password::placeholder, .form-inner-top-text, .form-inner-bottom-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #7B809A;
+}
+.form-inner-bottom-link {
+    font-family: 'Roboto';
+    font-weight: 600;
+    text-decoration: none;
+    color: #E93B77;
+    transform: translateY(-3px);
 }
