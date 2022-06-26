@@ -12,10 +12,13 @@
     <div class="header-container">
         <div class="d-flex align-items-center justify-content-end user">
             <h3 class="user-name"></h3>
-            <a type="submit" class="btn user-out">Logout</a>
+            <a href="./index.html" type="submit" class="btn user-out">Logout</a>
         </div>
-        <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between">
+        <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between position-fixed">
             <div class="row posts ps-3 pe-3 border pb-5 w-50"></div>
+            <div class="mt-2 parent-pagination justify-content-center m-auto">
+                <ul class="pagination todo-pagination flex-wrap"></ul>
+            </div>
             <div class="row bookmarked ps-3 pe-3 border pb-5 w-50"></div>
         </div>
         <div class="modal-container">
@@ -67,6 +70,12 @@
             </div>
             <p class="post-delete ms-auto">DELETE</p>
         </div>
+    </template>
+
+    <template id="pagination-item">
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
     </template>
 
     <script src="./js/http.js"></script>

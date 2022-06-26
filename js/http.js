@@ -18,7 +18,7 @@ async function fetchAPI(options = {
         const result = await response.json()
         if (response.status >= 300) throw new Error(result);
         return result
-    } catch (err) {
+    }catch (err) {
         alert(err)
     }
 

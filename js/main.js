@@ -28,7 +28,7 @@ function createClonePosts(post) {
     editEl.dataset.todoId = post._id
     editEl.dataset.task = 'edit'
     editEl.addEventListener('click', (event) => {
-        if(clicked.dataset.todoId = post._id) {
+        if(event.target.dataset.task = 'edit') {
             updatedRequest(post._id)
         }
         let modalEl = document.querySelector('.modal-container');
@@ -49,6 +49,10 @@ function createClonePosts(post) {
             }
             const result = await updatedRequest(credentials, id)
             localStorage.setItem('token', result['Authorization'])
+            // const data = await loginRequest(credentials)
+            // const { token } = result
+            localStorage.setItem("token", token);
+            renderPosts()
         })
     })
 
@@ -88,6 +92,11 @@ postsRequest().then(result => {
     renderPosts(posts)
 })
 
+var cancelBtn = document.querySelector('.modal-reset-btn')
+var saveBtn = document.querySelector('.modal-save-btn')
+cancelBtn.dataset.task = 'cancel'
+saveBtn.dataset.task = 'save'
+
 document.body.addEventListener('click', (event) => {
     clicked = event.target;
 
@@ -96,29 +105,10 @@ document.body.addEventListener('click', (event) => {
         modalEl.classList.remove('modal--active');
     }
 
-    // if(clicked.dataset.task = 'edit') {
-    //     id = clicked.dataset.todoId
-    //     console.log(id);
-    //     updatedRequest(id)
-    //     // localStorage.setItem('token', result['Authorization'])
-    //     let modalEl = document.querySelector('.modal-container');
-    //     modalEl.classList.add('modal--active');
-
-    //     var modalForm = document.querySelector(".modal-form")
-    //     var modalTitle = document.querySelector(".modal-form-title")
-    //     var modalBody = document.querySelector(".modal-form-body")
-        
-    //     modalForm.addEventListener('submit', async event => {
-    //         event.preventDefault()
-        
-    //         const credentials = {
-    //             title: modalTitle.value,
-    //             body: modalBody.value
-    //         }
-    //         const result = await updatedRequest(credentials)
-    //         localStorage.setItem('token', result['Authorization'])
-    //     })
-    // }
+    if(clicked.dataset.task === 'save') {
+        let modalEl = document.querySelector('.modal-container');
+        modalEl.classList.remove('modal--active');
+    }
 
     if(clicked.dataset.task === 'delete') {
         bookmarkedPost = bookmarkedPost.filter(item => item._id !== clicked.dataset.todoId)
