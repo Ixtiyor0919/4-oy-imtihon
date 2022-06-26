@@ -19,6 +19,8 @@ function createClonePosts(post) {
     deleteEl.addEventListener('click', (event) => {
         if(event.target.dataset.todoId = post._id) {
             postsDelete(post._id); 
+            let alert = document.querySelector('.alert')
+            alert.classList.toggle('alerted')
             renderPosts(posts)
         }
     })

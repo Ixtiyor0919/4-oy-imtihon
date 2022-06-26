@@ -203,3 +203,10 @@
     background: linear-gradient(180deg, #E93B77 0%, #DA1F63 100%);
     border-radius: 8px;
 }
+.alerte {
+    right: 0;
+    top: -30%;
+}
+.alerted {
+    top: 3%;
+}
