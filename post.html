@@ -11,33 +11,37 @@
 <body>
     <div class="header-container">
         <div class="d-flex align-items-center justify-content-end user">
-            <h3 class="user-name"></h3>
+            <h3 class="user-name me-5"></h3>
             <a href="./index.html" type="submit" class="btn user-out">Logout</a>
         </div>
         <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between position-fixed">
-            <div class="row posts ps-3 pe-3 border pb-5 w-50"></div>
-            <div class="mt-2 parent-pagination justify-content-center m-auto">
-                <ul class="pagination todo-pagination flex-wrap"></ul>
+            <div class="row posts ps-3 pe-3 border pb-5 w-50">
+                <div class="mt-2 parent-pagination justify-content-center m-auto">
+                    <ul class="pagination todo-pagination flex-wrap"></ul>
+                </div>
             </div>
             <div class="row bookmarked ps-3 pe-3 border pb-5 w-50"></div>
         </div>
         <div class="modal-container">
             <div class="modal-content">
-                <form class="w-75 m-aut modal-form">
-                    <h2 class="modal-title text-center">EDIT POST</h2>
-                    <label class="label-form col-12">
+                <form class="col-9 m-auto text-center">
+                    <h2 class="modal-title justify-content-center mb-4">EDIT POST</h2>
+                    <label class="label-form col-12 mb-4 mt-3">
                         <input type="text" class="form-control modal-form-title" placeholder="Title">
                     </label>
-                    <label class="label-form col-12">
+                    <label class="label-form col-12 mt-3">
                         <input type="text" class="form-control modal-form-body" placeholder="Body">
                     </label>
-                    <div>
-                        <button type="reset" class="btn modal-reset-btn">Cancel</button>
+                    <div class="text-end col-12 mt-4">
+                        <button type="reset" class="btn modal-reset-btn me-3">Cancel</button>
                         <button type="submit" class="btn modal-save-btn">Save changes</button>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
+    <div class="alert alert-success position-absolute top-0 w-50" role="alert">
+        Muvaffaqiyatli yuklandi!
     </div>
 
     <template id="post-template">

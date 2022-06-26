@@ -20,3 +20,18 @@ registerForm.addEventListener('submit', async event => {
         window.location.href = "/post.html"
     }
 })
+
+var showPassword = document.querySelector('.password-icon');
+
+showPassword.addEventListener('click', () => {
+    if(password.type == 'password') {
+        password.type = 'text';
+        showPassword.classList.toggle('fa-eye-slash')
+        showPassword.classList.toggle('fa-eye')
+    }
+    else {
+        password.type = 'password'
+        showPassword.classList.toggle('fa-eye')
+        showPassword.classList.add('fa-eye-slash')
+    }
+})

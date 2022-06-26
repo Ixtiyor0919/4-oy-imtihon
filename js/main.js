@@ -18,11 +18,10 @@ function createClonePosts(post) {
     deleteEl.dataset.task = 'delete'
     deleteEl.addEventListener('click', (event) => {
         if(event.target.dataset.todoId = post._id) {
-            renderPosts(posts)
             postsDelete(post._id); 
+            renderPosts(posts)
         }
     })
-    renderPosts(posts)
 
     let editEl = postEl.querySelector('.post-edit');
     editEl.dataset.todoId = post._id
