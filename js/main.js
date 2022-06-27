@@ -6,6 +6,8 @@ var postEl = document.querySelector('.posts')
 var deleteEl = document.querySelector('.post-delete')
 var editEl = document.querySelector('.post-edit')
 var saveEl = document.querySelector('.post-save')
+var userLogout = document.querySelector('.user-out')
+var userProfile = document.querySelector('.user-name')
 
 function createClonePosts(post) {
     let postTemplate = document.querySelector('#post-template');
@@ -126,4 +128,13 @@ document.body.addEventListener('click', (event) => {
     //     postsDelete(posts)
     //     renderPosts(posts, postEl)
     // }
+})
+
+profileRequest().then(result => {
+    userProfile.textContent = result.name;
+})
+
+userLogout.addEventListener('click', () => {
+    localStorage.clear()
+    window.location.href = "/index.html"
 })
