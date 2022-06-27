@@ -1,4 +1,4 @@
-const API = "https://fast-ravine-16741.herokuapp.com"
+const API = "https://fast-ravine-16741.herokuapp.com";
 
 async function fetchAPI(options = {
     url: "",
@@ -64,7 +64,7 @@ async function postsDelete(id) {
         headers: {
             "Authorization": token
         },
-        // body: credentials
+        //  body: JSON.stringify(credentials)
     })
     return result
 }
@@ -72,7 +72,7 @@ async function postsDelete(id) {
 async function updatedRequest(credentials, postId) {
     const token = localStorage.getItem('token')
     const result = await fetchAPI({
-        url: `${API}//api/posts/${postId}`,
+        url: `${API}//api/posts/${postId}/`,
         method: "PUT",
         headers: {
             "Authorization": token

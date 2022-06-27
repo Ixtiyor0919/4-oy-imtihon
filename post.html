@@ -11,7 +11,7 @@
 <body>
     <div class="header-container">
         <div class="d-flex align-items-center justify-content-end user">
-            <h3 class="user-name me-5"></h3>
+            <h3 id="user" class="user-name me-5"></h3>
             <a href="./index.html" type="submit" class="btn user-out">Logout</a>
         </div>
         <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between position-fixed">
@@ -24,7 +24,7 @@
         </div>
         <div class="modal-container">
             <div class="modal-content">
-                <form class="col-9 m-auto text-center">
+                <form class="col-9 m-auto text-center modal-form">
                     <h2 class="modal-title justify-content-center mb-4">EDIT POST</h2>
                     <label class="label-form col-12 mb-4 mt-3">
                         <input type="text" class="form-control modal-form-title" placeholder="Title">
@@ -81,7 +81,6 @@
             <a class="page-link" href="#">1</a>
         </li>
     </template>
-
     <script src="./js/http.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/main.js"></script>

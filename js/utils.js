@@ -41,24 +41,24 @@ function renderPagination(totalResults) {
     paginationContainer.appendChild(paginationFragment)
 }
 
-function renderPosts(post, totalResults = 0) {
-    document.querySelector(".results").textContent = totalResults
-    renderPagination(totalResults)
-    postEl.innerHTML = null;
-    if (!post || post.length <= 0) {
-        let Not = document.createElement('p')
-        Not.textContent = 'Movies Not Found';
-        Not.className = 'fs-1 text-light text-center fw-bold';
-        moviesRow.appendChild(Not)
-    } else {
-        let fragment = new DocumentFragment()
-        post.forEach(item => {
-            fragment.appendChild(createClonePosts(item))
-        });
+// function renderPosts(post, totalResults = 0) {
+//     document.querySelector(".results").textContent = totalResults
+//     renderPagination(totalResults)
+//     postEl.innerHTML = null;
+//     if (!post || post.length <= 0) {
+//         let Not = document.createElement('p')
+//         Not.textContent = 'Movies Not Found';
+//         Not.className = 'fs-1 text-light text-center fw-bold';
+//         moviesRow.appendChild(Not)
+//     } else {
+//         let fragment = new DocumentFragment()
+//         post.forEach(item => {
+//             fragment.appendChild(createClonePosts(item))
+//         });
 
-        postEl.appendChild(fragment)
-    }
-}
+//         postEl.appendChild(fragment)
+//     }
+// }
 function renderPosts(post) {
     postEl.innerHTML = null;
     let fragment = new DocumentFragment()
