@@ -5,19 +5,21 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
+    padding: 0 10px;
     font-size: 25px;
     line-height: 140%;
-    display: flex;
+    display: block;
     align-items: center;
-    text-align: center;
-    color: #000000;
+    color: #607D8B;
+    border: 2px solid darkgrey;
+    border-radius: 5px;
 }
 .user-out {
     font-family: 'Roboto';
     font-style: normal;
     padding: 12px 60px;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 140%;
     background: #F44334;
     border-radius: 8px;
@@ -32,7 +34,7 @@
     height: 100vh;
     background: #FFFFFF;
 }
-.posts {
+.posts-container {
     height: 84vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -40,12 +42,12 @@
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.31);
 }
-.posts::-webkit-scrollbar {
+.posts-container::-webkit-scrollbar {
     width: 7px;
     border-radius: 5px;
     background-color: rgb(206, 203, 203);
 }
-.posts::-webkit-scrollbar-thumb {
+.posts-container::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: rgb(122, 122, 122);
 }
@@ -85,9 +87,6 @@
     font-size: 13px;
     line-height: 140%;
     color: #7B809A;
-}
-.post-inner-right {
-    width: 27%;
 }
 .post-delete, .post-edit, .post-save {
     font-family: 'Roboto';
@@ -152,7 +151,7 @@
     visibility: hidden;
     opacity: 0;
 }
-.modal--active {
+.show--modal {
     visibility: visible;
     z-index: 10;
     opacity: 1;
@@ -209,4 +208,59 @@
 }
 .alerted {
     top: 3%;
+}
+/* .loader {
+    top: 35%;
+    right: 55%;
+} */
+/* .showed {
+    z-index: 99;
+    opacity: 10;
+} */
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    opacity: 0.9;
+    user-select: none;
+    z-index: 999999;
+    transition: opacity .1s ease, visibility .1s ease;
+}
+
+.loader__hide{
+    opacity: 0!important;
+    visibility: hidden!important;
+}
+.loader__img{
+    border-radius: 15px;
+}
+/* Pagination */
+.parent-pagination {
+    padding: 10px;
+}
+.pagination {
+    width: 50%;
+    padding: 8px; 
+    margin: 0 auto;
+    right: 50%;
+    border: 2px solid darkgray;
+    border-radius: 20px;
+    list-style: none;
+}
+.page-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+}
+.page--active {
+    color: white !important;
+    background-color: rgb(146, 144, 144);
 }

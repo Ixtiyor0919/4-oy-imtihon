@@ -5,13 +5,14 @@ var signUp = document.querySelector(".form-inner-bottom-link")
 
 loginForm.addEventListener('submit', async event => {
     event.preventDefault()
-
+    showLoader()
     const credentials = {
         email: loginEmail.value,
         password: loginPassword.value
     }
     const result = await loginRequest(credentials)
     localStorage.setItem('token', result['Authorization'])
+    hideLoader()
     window.location.href = "/post.html"
 })
 

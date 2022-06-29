@@ -9,18 +9,26 @@
     <link rel="stylesheet" href="./css/post.css">
 </head>
 <body>
-    <div class="header-container">
+    <div class="header-container position-relative">
+        <div class="loader loader__hide position-absolute">
+            <img class="loader__img  position-absolute" src="./images/DoubleRing-1s-200px.gif" alt="">
+        </div>
         <div class="d-flex align-items-center justify-content-end user">
-            <h3 id="user" class="user-name me-4 fs-3 text-dark fw-bold"></h3>
-            <button type="submit" class="btn user-out fs-5">Logout</button>
+            <div class="d-flex position-relative w-100 m-auto justify-content-between">
+                <h2 class="position-absolute start-0 text-secondary">Posts</h2>
+                <h2 style="left: 65%;" class="position-absolute text-secondary">Saved posts</h2>
+            </div>
+            <h3 id="user" class="user-name me-3 mt-2"></h3>
+            <button type="submit" class="btn user-out">Logout</button>
         </div>
         <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between position-fixed">
-            <div class="row posts ps-3 pe-3 border pb-5 w-50">
-                <div class="mt-2 parent-pagination justify-content-center m-auto">
-                    <ul class="pagination todo-pagination flex-wrap"></ul>
+            <div class="w-50 posts-container border">
+                <div class="posts row ps-4 pe-4"></div>
+                <div class="parent-pagination justify-content-center">
+                    <ul class="pagination todo-pagination flex-wrap justify-content-center"></ul>
                 </div>
             </div>
-            <div class="row bookmarked ps-3 pe-3 border pb-5 w-50"></div>
+            <div class="w-50 row bookmarked ps-3 pe-3 border pb-3"></div>
         </div>
         <div class="modal-container">
             <div class="modal-content">
@@ -30,10 +38,10 @@
                         <input type="text" class="form-control modal-form-title" placeholder="Title">
                     </label>
                     <label class="label-form col-12 mt-3">
-                        <input type="text" class="form-control modal-form-body" placeholder="Body">
+                        <textarea class="form-control modal-form-body" rows="7" placeholder="Body"></textarea>
                     </label>
                     <div class="text-end col-12 mt-4">
-                        <button type="reset" class="btn modal-reset-btn me-3">Cancel</button>
+                        <button type="button" class="btn modal-reset-btn me-3">Cancel</button>
                         <button type="submit" class="btn modal-save-btn">Save changes</button>
                     </div>
                 </form>
@@ -45,7 +53,7 @@
     </div>
 
     <template id="post-template">
-        <div class="post-item d-flex col-12 g-3 p-4 pb-2 justify-content-between">
+        <div class="post-item d-flex col-12 g-3 p-4 justify-content-between">
             <div class="col-8">
                  <h3 class="post-item-title">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, odio.
@@ -55,9 +63,9 @@
                  </p>
             </div>
             <div class="d-flex align-items-center flex-wrap post-inner-right">
-                 <p class="post-delete ms-auto">DELETE</p>
-                 <p class="post-edit ms-4">EDIT</p>
-                 <p class="post-save ms-auto">SAVE</p>
+                 <p class="post-delete ms-auto me-3 btn btn-outline-danger">DELETE</p>
+                 <p class="post-edit btn btn-outline-dark">EDIT</p>
+                 <p class="post-save ms-auto btn btn-outline-success">SAVE</p>
             </div>
         </div>
     </template>
@@ -72,7 +80,7 @@
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nostrum deserunt illum magnam inventore optio dicta corporis aliquid totam non!
                  </p>
             </div>
-            <p class="post-delete ms-auto">DELETE</p>
+            <p style="height: 30px;" class="post-delete ms-auto btn btn-outline-danger mt-auto">DELETE</p>
         </div>
     </template>
 
@@ -81,6 +89,8 @@
             <a class="page-link" href="#">1</a>
         </li>
     </template>
+    
+    <script src="./js/local-storage.js"></script>
     <script src="./js/http.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/main.js"></script>

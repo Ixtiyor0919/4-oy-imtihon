@@ -19,10 +19,8 @@ async function fetchAPI(options = {
         if (response.status >= 300) throw new Error(result);
         return result
     }catch (err) {
-        console.log(err)
+        alert(err.message)
     }
-
-
 }
 
 async function loginRequest(credentials) {
@@ -56,28 +54,30 @@ async function postsRequest(credentials) {
     return result
 }
 
-async function postsDelete(id) {
+async function deletePosts(postId) {
     const token = localStorage.getItem('token')
     const result = await fetchAPI({
-        url: `${API}/api/posts/${id}/`,
+        url: `${API}/api/posts/${postId}`,
         method: "DELETE",
         headers: {
             "Authorization": token
-        },
-        //  body: JSON.stringify(credentials)
+        }
     })
     return result
 }
 
-async function updatedRequest(credentials, postId) {
+async function updatedPosts({ _id, title, body }) {
     const token = localStorage.getItem('token')
     const result = await fetchAPI({
-        url: `${API}//api/posts/${postId}/`,
+        url: `${API}/api/posts/${_id}`,
         method: "PUT",
         headers: {
             "Authorization": token
         },
-        body: credentials
+        body: {
+            title, 
+            body
+        }
     })
     return result
 }
@@ -92,3 +92,50 @@ async function profileRequest() {
     })
     return result
 }
+
+async function getSinglePostRequest(id) {
+    const token = localStorage.getItem('token')
+    const result = await fetchAPI({
+        url: `${API}/api/posts/${id}`,
+        headers: {
+            "Authorization": token
+        },
+    })
+    return result
+}
+
+async function getPostsRequest(page = 1) {
+    const token = localStorage.getItem('token')
+    const result = await fetchAPI({
+        url: `${API}/api/posts?page=${page}`,
+        headers: {
+            "Authorization": token
+        }
+    })
+    return result
+}
+
+// async function renderPostALL() {
+//     const token = localStorage.getItem('token')
+//     const result = await fetchAPI({
+//         url: `${API}/api/posts`,
+//         headers: {
+//             "Authorization": token
+//         }
+//     })
+//     return result
+// }
+
+
+// async function postsAllRequest (credentials) {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//         method: "Post",
+//         headers: {
+//             "Content-type": "application/json"
+//         },
+//         body: JSON.stringify(credentials)
+//     })
+//     const result = await response.json()
+//     console.log(result)
+//     return result
+// }

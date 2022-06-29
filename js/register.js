@@ -5,7 +5,7 @@ var registerPassword = document.querySelector(".register-password")
 
 registerForm.addEventListener('submit', async event => {
     event.preventDefault()
-
+    showLoader()
     const credentials = {
         email: registerEmail.value,
         password: registerPassword.value,
@@ -17,6 +17,7 @@ registerForm.addEventListener('submit', async event => {
         const { name, isAdmin, ...loginCreadentials } = credentials
         const result = await loginRequest(loginCreadentials)
         localStorage.setItem('token', result['Authorization'])
+        hideLoader()
         window.location.href = "/post.html"
     }
 })
