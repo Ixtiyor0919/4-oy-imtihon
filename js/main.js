@@ -16,7 +16,7 @@ var modalEl = document.querySelector('.modal-container');
 var modalForm = document.querySelector('.modal-form');
 var modalFormTitle = document.querySelector('.modal-form-title');
 var modalFormBody = document.querySelector('.modal-form-body');
-cancelBtn.dataset.task = 'close'
+// cancelBtn.dataset.task = 'close'
 // saveBtn.dataset.task = 'save'
 
 profileRequest().then(result => {
