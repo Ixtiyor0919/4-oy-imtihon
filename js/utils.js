@@ -69,7 +69,6 @@ function renderPagination(totalResults) {
     // linkEl.dataset.task = 'next-page'
     // paginationContainer.appendChild(paginationNextItemEl)
 }
-
 function showLoader() {
     loaderEl.classList.remove("loader__hide")
     loaderEl.classList.add("showed")
