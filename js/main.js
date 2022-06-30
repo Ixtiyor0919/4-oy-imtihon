@@ -11,13 +11,11 @@ var userLogout = document.querySelector('.user-out')
 var userProfile = document.querySelector('.user-name')
 var loaderEl = document.querySelector(".loader")
 var cancelBtn = document.querySelector('.modal-reset-btn')
-var saveBtn = document.querySelector('.modal-save-btn')
 var modalEl = document.querySelector('.modal-container');
 var modalForm = document.querySelector('.modal-form');
 var modalFormTitle = document.querySelector('.modal-form-title');
 var modalFormBody = document.querySelector('.modal-form-body');
-// cancelBtn.dataset.task = 'close'
-// saveBtn.dataset.task = 'save'
+cancelBtn.dataset.task = 'close'
 
 profileRequest().then(result => {
     userProfile.textContent = result.name;

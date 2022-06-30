@@ -115,6 +115,7 @@ async function getPostsRequest(page = 1) {
     return result
 }
 
+
 // async function renderPostALL() {
 //     const token = localStorage.getItem('token')
 //     const result = await fetchAPI({
