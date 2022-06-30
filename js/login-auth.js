@@ -4,7 +4,7 @@ if (!localStorage.getItem('token')) {
 async function getProfile() {
     const token = localStorage.getItem('token')
     const result = await fetchAPI({
-        url: `${API}/api/users/me`,
+        url: `https://fast-ravine-16741.herokuapp.com/api/users/me`,
         headers: {
             "Authorization": token
         }
