@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">                                                                                                            
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -13,13 +13,24 @@
         <div class="loader loader__hide position-absolute">
             <img class="loader__img  position-absolute" src="./images/DoubleRing-1s-200px.gif" alt="">
         </div>
-        <div class="d-flex align-items-center justify-content-end user">
-            <div class="d-flex position-relative w-100 m-auto justify-content-between">
-                <h2 class="position-absolute start-0 text-secondary">Posts</h2>
-                <h2 style="left: 65%;" class="position-absolute text-secondary">Saved posts</h2>
+        <div class="d-flex align-items-center justify-content-between user mb-3">
+            <div class="d-flex align-items-center">
+                <h2 class="text-secondary me-3">Posts</h2>
+                <form class="form add-form d-flex align-items-center me-5">
+                    <label class="form-label m-1 col-6">
+                        <input class="form-control col-12 add-title" type="text" placeholder="Title...">
+                    </label>
+                    <label class="form-label m-1 col-6">
+                        <input class="form-control col-12 add-body" type="text" placeholder="Body...">
+                    </label>
+                    <button type="submit" class="btn btn-success m-1 col-2">Add</button>
+                </form>
+                <h2 style="left: 52%;" class="position-absolute text-secondary">Saved posts</h2>
             </div>
-            <h3 id="user" class="user-name me-3 mt-2"></h3>
-            <button type="submit" class="btn user-out">Logout</button>
+            <div class="d-flex align-items-center">
+                <h3 id="user" class="user-name me-3 mt-2 text-light"></h3>
+                <button type="submit" class="btn user-out">Logout</button>
+            </div>
         </div>
         <div class="container-fluid d-flex main-container ps-3 pe-3 justify-content-between position-fixed">
             <div class="w-50 posts-container border">

@@ -19,7 +19,7 @@ async function fetchAPI(options = {
         if (response.status >= 300) throw new Error(result);
         return result
     }catch (err) {
-        alert(err.message)
+        alert(`To'g'ri ma'lumot kiriting`)
     }
 }
 
@@ -110,6 +110,22 @@ async function getPostsRequest(page = 1) {
         url: `${API}/api/posts?page=${page}`,
         headers: {
             "Authorization": token
+        }
+    })
+    return result
+}
+
+async function addSinglePostRequest({title, body}) {
+    const token = localStorage.getItem('token')
+    const result = await fetchAPI({
+        url: `${API}/api/posts`,
+        method: "POST",
+        headers: {
+            "Authorization": token
+        },
+        body: {
+            title, 
+            body
         }
     })
     return result

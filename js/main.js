@@ -15,6 +15,9 @@ var modalEl = document.querySelector('.modal-container');
 var modalForm = document.querySelector('.modal-form');
 var modalFormTitle = document.querySelector('.modal-form-title');
 var modalFormBody = document.querySelector('.modal-form-body');
+var addForm = document.querySelector('.add-form');
+var addFormTitle = document.querySelector('.add-title');
+var addFormBody = document.querySelector('.add-body');
 cancelBtn.dataset.task = 'close'
 
 profileRequest().then(result => {
@@ -120,6 +123,21 @@ modalEl.addEventListener('submit', async (event) => {
     if (!result) return
     closeModal()
     alert("Post successfully updated")
+    renderPosts()
+})
+
+addForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    showLoader()
+    const data = {
+        title: addFormTitle.value,
+        body: addFormBody.value
+    }
+    const result = await addSinglePostRequest(data)
+    addForm.reset()
+    hideLoader()
+    if (!result) return
+    alert("Post successfully added")
     renderPosts()
 })
 

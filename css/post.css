@@ -5,14 +5,14 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    padding: 0 10px;
+    padding: 3px 15px;
     font-size: 25px;
     line-height: 140%;
     display: block;
     align-items: center;
-    color: #607D8B;
-    border: 2px solid darkgrey;
+    /* border: 2px solid darkgrey; */
     border-radius: 5px;
+    box-shadow: inset 3px 3px 3px #868686, inset -3px -3px 3px #ffffff;
 }
 .user-out {
     font-family: 'Roboto';
@@ -28,7 +28,14 @@
     text-decoration: none;
 }
 .user {
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
+    background-color: #455A64;
+}
+.add-title::placeholder {
+    font-weight: 700;
+}
+.add-body::placeholder {
+    font-weight: 700;
 }
 .main-container {
     height: 100vh;
@@ -209,15 +216,6 @@
 .alerted {
     top: 3%;
 }
-/* .loader {
-    top: 35%;
-    right: 55%;
-} */
-/* .showed {
-    z-index: 99;
-    opacity: 10;
-} */
-
 .loader {
     display: flex;
     align-items: center;
