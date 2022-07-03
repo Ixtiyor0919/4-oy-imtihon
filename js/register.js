@@ -2,6 +2,7 @@ var registerForm = document.querySelector(".register-form")
 var registerName = document.querySelector(".register-name")
 var registerEmail = document.querySelector(".register-email")
 var registerPassword = document.querySelector(".register-password")
+var showPassword = document.querySelector('.password-icon');
 
 registerForm.addEventListener('submit', async event => {
     event.preventDefault()
@@ -21,8 +22,6 @@ registerForm.addEventListener('submit', async event => {
         window.location.href = "/post.html"
     }
 })
-
-var showPassword = document.querySelector('.password-icon');
 
 showPassword.addEventListener('click', () => {
     if(password.type == 'password') {

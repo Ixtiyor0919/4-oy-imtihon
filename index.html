@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./bootstrap.min.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" 
+  <title>Login/Signup</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" 
         referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="register-wrapper">
-        <form class="register-form w-100 justify-content-center">
-            <div class="form-inner-top m-auto p-4 text-center">
-                <p class="form-inner-top-text">Sign Up</p>
-            </div>
-            <div class="form-inner-wrapper row col-4 ms-auto me-auto justify-content-center gap-3 ps-2 pe-2 pt-5 pb-3 position-relative">
-                <label class="form-label col-12 m-2">
-                    <input type="text" class="form-control register-name" placeholder="Name">
-                </label>
-                <label class="form-label m-2">
-                    <input type="email" class="form-control register-email" placeholder="Email">
-                </label>
-                <label class="form-label m-2">
-                    <input type="password" id="password" class="form-control register-password" placeholder="Current password">
-                </label>
-                <i class="fa-solid text-secondary fa-eye-slash password-icon position-absolute pointer-event"></i>
-                <button class="btn register-btn  text-light m-1" type="submit">SIGN UP</button>
-                <div class="d-flex justify-content-center mt-4">
-                    <p class="form-inner-text me-2">Don't have an account?</p>
-                    <a href="./login.html" class="form-inner-link">Sign In</a>
-                </div>
-            </div>
-        </form>
-    </div>
+<body class="auth-body auth-body--sign-up">
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form class="sign-up register-form">
+    <h3 class="sign-up__title">Sign Up Here</h3>
+
+    <label for="username">Name</label>
+    <input class="sign-up__user-name register-name" type="text" placeholder="Name" id="name">
+
+    <label for="email">Email</label>
+    <input class="sign-up__user-email register-email" type="email" placeholder="Email" id="email">
+
+    <label for="password">Password</label>
+    <input class="sign-up__user-password register-password" type="password" placeholder="Password" id="password">
+    <i class="fa-solid text-secondary fa-eye-slash password-icon position-absolute"></i>
+
+    <button class="sign-up__btn register-btn">Sign Up</button>
+    <a class="sign-up__link auth-link" href="./login.html">Already have an account ?</a>
+  </form>
+
     <div class="loader loader__hide position-absolute">
         <img class="loader__img  position-absolute" src="./images/DoubleRing-1s-200px.gif" alt="">
     </div>
-    <script src="./js/register.js"></script>
-    <script src="./js/http.js"></script>
-    <script src="./js/utils.js"></script>
+
+  <script src="./js/register.js"></script>
+  <script src="./js/http.js"></script>
+  <script src="./js/utils.js"></script>
 </body>
 </html>

@@ -45,9 +45,9 @@ function renderPagination(totalResults) {
         let linkEl = pageItem.querySelector('.page-link');
 
         if(i == currentPage) {
-            itemEl.classList.add('.page--active');
+            itemEl.classList.add('active');
         }else{
-            itemEl.classList.remove('.page--active');
+            itemEl.classList.remove('active');
         }
         
         linkEl.textContent = i;

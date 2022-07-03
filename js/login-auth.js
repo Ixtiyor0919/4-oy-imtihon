@@ -11,7 +11,3 @@ async function getProfile() {
     })
     return result
 }
-
-getProfile().then(result => {
-    console.log(result)
-})
