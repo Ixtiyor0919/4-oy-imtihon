@@ -21,6 +21,7 @@ var addFormBody = document.querySelector('.add-body');
 cancelBtn.dataset.task = 'close'
 
 profileRequest().then(result => {
+    userProfile.innerHTML = null;
     userProfile.textContent = result.name;
 })
 
@@ -87,12 +88,6 @@ document.body.addEventListener('click', async (event) => {
     if(clicked.dataset.task === 'close') {
         closeModal()
     }
-    
-    // if(clicked.dataset.task === 'save') {
-    //     let modalEl = document.querySelector('.modal-container');
-    //     modalEl.classList.remove('modal--active');
-    // }
-    
     
     if(clicked.dataset.task === "save-post") {
         const post = await getSinglePostRequest(clicked.dataset.postId)

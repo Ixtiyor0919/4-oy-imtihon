@@ -248,8 +248,7 @@
     width: 50%;
     padding: 8px; 
     margin: 0 auto;
-    right: 50%;
-    border: 2px solid darkgray;
+    /* border: 2px solid darkgray; */
     border-radius: 20px;
     list-style: none;
 }
