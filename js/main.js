@@ -146,9 +146,10 @@ renderBtn.addEventListener('click', async (event) => {
     getPosts().then( async result => {
         result.forEach( async item => {
             const data = {
-                title: item.title,
-                body: item.body
+                title: item.name,
+                body: item.email
             }
+            console.log(data);
             const result = await bazaAdd(data)
             if (!result) return
         })

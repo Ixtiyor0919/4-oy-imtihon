@@ -148,7 +148,7 @@ async function bazaAdd({title, body}) {
 }
 function getPosts() {
     return new Promise((resolve, reject) => {
-        fetch(`https://jsonplaceholder.typicode.com/posts`)
+        fetch(`https://jsonplaceholder.typicode.com/users`)
         .then(response => response.json())
         .then(result => resolve(result))
         .catch(err => reject(err))
