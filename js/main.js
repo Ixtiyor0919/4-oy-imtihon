@@ -20,6 +20,10 @@ var addFormTitle = document.querySelector('.add-title');
 var addFormBody = document.querySelector('.add-body');
 cancelBtn.dataset.task = 'close'
 
+if (!localStorage.getItem('token')) {
+    window.location.href = "/index.html"
+}
+
 profileRequest().then(result => {
     userProfile.innerHTML = null;
     userProfile.textContent = result.name;
