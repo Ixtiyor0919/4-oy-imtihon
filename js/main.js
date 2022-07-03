@@ -1,7 +1,7 @@
 var posts = []
 
 const Limit = 10;
-const currentPage = 1;
+var currentPage = 1;
 var bookmarked = document.querySelector('.bookmarked')
 var postEl = document.querySelector('.posts')
 var deleteEl = document.querySelector('.post-delete')
@@ -104,7 +104,8 @@ document.body.addEventListener('click', async (event) => {
         renderSavedPosts()
     }
 
-    if(clicked.dataset.task === 'page') {
+    if(clicked.dataset.task == 'page') {
+        current = clicked.dataset.pageId
         renderPosts(clicked.dataset.pageId)
     }
 })
@@ -138,6 +139,20 @@ addForm.addEventListener('submit', async (event) => {
     if (!result) return
     alert("Post successfully added")
     renderPosts()
+})
+
+renderBtn.addEventListener('click', async (event) => {
+    event.preventDefault()
+    getPosts().then( async result => {
+        result.forEach( async item => {
+            const data = {
+                title: item.title,
+                body: item.body
+            }
+            const result = await bazaAdd(data)
+            if (!result) return
+        })
+    })
 })
 
 // document.onload.addEventListener()

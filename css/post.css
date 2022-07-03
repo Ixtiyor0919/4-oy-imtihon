@@ -245,19 +245,23 @@
     padding: 10px;
 }
 .pagination {
-    width: 50%;
+    /* width: 50%; */
     padding: 8px; 
     margin: 0 auto;
     /* border: 2px solid darkgray; */
     border-radius: 20px;
     list-style: none;
 }
-.page-item {
+.page-items {
     width: 30px;
     height: 30px;
-    border-radius: 20%;
+    text-align: center !important;
+    border-radius: 25%;
+}
+.page-links {
+    color: #868686;
+    text-decoration: none;
 }
 .page--active {
-    color: white !important;
-    background-color: rgb(146, 144, 144);
+    background: rgb(146, 144, 144);
 }

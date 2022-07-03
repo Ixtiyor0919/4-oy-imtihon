@@ -1,6 +1,5 @@
 async function renderPosts(current = 1) {
     const { posts, totalResults } = await getPostsRequest(current)
-    // document.querySelector(" .results").textContent = totalResults
     renderPagination(totalResults)
     postEl.innerHTML = null;
     if (!posts || posts.length <= 0) {
@@ -39,35 +38,25 @@ function renderPagination(totalResults) {
 
     let templatePageItem = document.querySelector('#pagination-item');
     let paginationFragment = new DocumentFragment()
-    for(let i=1; i <= totalResults / Limit; i++) {
+    const pageCount  = (totalResults / Limit) +1
+    for(let i=1; i <= pageCount; i++) {
         let pageItem = templatePageItem.content.cloneNode(true);
-        let itemEl = pageItem.querySelector('.page-item');
-        let linkEl = pageItem.querySelector('.page-link');
-
-        if(i == currentPage) {
-            itemEl.classList.add('active');
-        }else{
-            itemEl.classList.remove('active');
-        }
+        let itemEl = pageItem.querySelector('.page-items');
+        // let linkEl = pageItem.querySelector('.page-links');
         
-        linkEl.textContent = i;
-        linkEl.dataset.pageId = i;
-        linkEl.dataset.task = 'page';
+        itemEl.textContent = i;
+        itemEl.dataset.pageId = i;
+        itemEl.dataset.task = 'page'
+        
+        // if(i == currentPage) {
+        //     itemEl.classList.add('page--active');
+        // }else{
+        //     itemEl.classList.remove('page--active');
+        // }
 
         paginationFragment.appendChild(pageItem);
     }
     paginationContainer.appendChild(paginationFragment)
-    // let paginationNextItemEl = templatePageItem.content.cloneNode(true)
-    // let pageNextItem = paginationNextItemEl.querySelector('.page-item')
-    // let linkEl = paginationNextItemEl.querySelector(".page-link")
-    // if (Math.ceil(countTodos / itemsPerPage) == currentPage) {
-    //     pageNextItem.classList.add("disabled")
-    // } else {
-    //     pageNextItem.classList.remove("disabled")
-    // }
-    // linkEl.textContent = "Next"
-    // linkEl.dataset.task = 'next-page'
-    // paginationContainer.appendChild(paginationNextItemEl)
 }
 var loaderEl = document.querySelector(".loader")
 function showLoader() {

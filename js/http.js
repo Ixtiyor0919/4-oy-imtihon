@@ -131,6 +131,29 @@ async function addSinglePostRequest({title, body}) {
     return result
 }
 
+async function bazaAdd({title, body}) {
+    const token = localStorage.getItem('token')
+    const result = await fetchAPI({
+        url: `${API}/api/posts`,
+        method: "POST",
+        headers: {
+            "Authorization": token
+        },
+        body: {
+            title, 
+            body
+        }
+    })
+    return result
+}
+function getPosts() {
+    return new Promise((resolve, reject) => {
+        fetch(`https://jsonplaceholder.typicode.com/posts`)
+        .then(response => response.json())
+        .then(result => resolve(result))
+        .catch(err => reject(err))
+    })
+}
 
 // async function renderPostALL() {
 //     const token = localStorage.getItem('token')
