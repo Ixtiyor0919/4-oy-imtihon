@@ -1,7 +1,7 @@
 var posts = []
 
-const Limit = 10;
-var currentPage = 1;
+// const Limit = 10;
+// var currentPage = 1;
 var bookmarked = document.querySelector('.bookmarked')
 var postEl = document.querySelector('.posts')
 var deleteEl = document.querySelector('.post-delete')
@@ -32,6 +32,11 @@ profileRequest().then(result => {
 userLogout.addEventListener('click', () => {
     localStorage.clear()
     window.location.href = "/index.html"
+})
+
+postsRequest().then(result => {
+    var posts = (result.posts)
+    renderPosts(posts) 
 })
 
 function createClonePosts(post) {
@@ -68,10 +73,6 @@ function createCloneBookmark(post) {
     return postEl
 }
 
-postsRequest().then(result => {
-    var posts = (result.posts)
-    renderPosts(posts) 
-})
 
 document.body.addEventListener('click', async (event) => {
     clicked = event.target;

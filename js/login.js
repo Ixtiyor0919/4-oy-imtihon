@@ -27,12 +27,12 @@ loginForm.addEventListener('submit', async event => {
         password: loginPassword.value
     }
     const result = await loginRequest(credentials)
-    if(!result) {
+    if(!result && loginPassword.value <= 0 || isNaN(loginPassword.value)) {
         password.style.border = '3px solid red';
         elValid.style.display = 'none';
         elInvalid.style.display = 'block';
         eye.style.display = 'none'
-        alert("Login xato");
+        alert("Parol yoki email xato");
     }else {
         password.style.border = '3px solid green';
         elInvalid.style.display = 'none';

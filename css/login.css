@@ -37,6 +37,8 @@
 }
 .form {
     width: 65% !important;
+    height: 80vh;
+    margin-top: 10% !important;
     background-color: #Ecf0f3;
     border-radius: 40px;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;

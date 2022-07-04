@@ -1,3 +1,5 @@
+const Limit = 10;
+var currentPage = 1;
 async function renderPosts(current = 1) {
     const { posts, totalResults } = await getPostsRequest(current)
     renderPagination(totalResults)
@@ -48,7 +50,7 @@ function renderPagination(totalResults) {
         itemEl.dataset.pageId = i;
         itemEl.dataset.task = 'page'
         
-        if(i == 1) {
+        if(i == currentPage) {
             itemEl.classList.add('page--active');
         }else{
             itemEl.classList.remove('page--active');
