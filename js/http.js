@@ -19,7 +19,7 @@ async function fetchAPI(options = {
         if (response.status >= 300) throw new Error(result);
         return result
     }catch (err) {
-        alert(err.message)
+        alert(err)
     }
 }
 

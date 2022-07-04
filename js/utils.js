@@ -48,11 +48,11 @@ function renderPagination(totalResults) {
         itemEl.dataset.pageId = i;
         itemEl.dataset.task = 'page'
         
-        // if(i == currentPage) {
-        //     itemEl.classList.add('page--active');
-        // }else{
-        //     itemEl.classList.remove('page--active');
-        // }
+        if(i == 1) {
+            itemEl.classList.add('page--active');
+        }else{
+            itemEl.classList.remove('page--active');
+        }
 
         paginationFragment.appendChild(pageItem);
     }
